@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Comfortaa";
+  src: url("../../fonts/Comfortaa-Regular.ttf") format("truetype");
+}
+body {
+  font-family: "Comfortaa";
+}
+
+.hero {
+  background-image: linear-gradient(rgba(87, 87, 87, 0.55), rgba(189, 189, 189, 0.55)), url("../../images/serg-balak-YFRSatKEn4c-unsplash-min.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0px 0px 15px 5px rgba(44, 44, 44, 1);
+  height: 200px;
+}
+
+.h1 {
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000;
+}
+
+.userIcon {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -7,19 +7,6 @@ $h1-font-size: 2rem;
 $h2-font-size: 1.6rem;
 $h3-font-size: 1.3rem;
 
-@font-face {
-  font-family: "Comfortaa";
-  src: url("../../fonts/Comfortaa-Regular.ttf") format("truetype");
-}
-
-body {
-  font-family: "Comfortaa";
-}
-
-.userIcon {
-  cursor: pointer;
-}
-
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/variables-dark";

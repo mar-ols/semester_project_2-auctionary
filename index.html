@@ -15,6 +15,7 @@
     ></script>
     <script type="module" src="src/js/index.js"></script>
     <link rel="stylesheet" href="dist/css/index.css" />
+    <link rel="stylesheet" href="dist/css/style.css" />
     <title>Auctionary - Home</title>
   </head>
   <body class="bg-primary">
@@ -215,5 +216,56 @@
         </section>
       </div>
     </header>
+    <main>
+      <section class="hero" aria-label="Intro">
+        <div class="text-primary pt-5">
+          <h1 class="h1 text-center mt-2">Welcome to Auctionary</h1>
+        </div>
+      </section>
+      <section class="frontPage container my-5">
+        <div class="d-lg-flex justify-content-between">
+          <div class="col col-lg-9 border border-secondary me-3">
+            <a href="/html/listings" class="text-secondary">
+              <h2 class="text-center pt-3">Ongoing auctions</h2></a
+            >
+            <div
+              class="main ongoing errorMsg d-flex flex-wrap justify-content-center"
+            ></div>
+          </div>
+          <div class="d-none d-lg-block col-3">
+            <div class="border border-secondary ps-3 pb-4">
+              <h3 class="text-decoration-underline text-center pt-3">
+                Categories
+              </h3>
+              <a href="" class="d-block link-secondary">View All</a>
+              <a href="" class="d-block link-secondary">Furniture</a>
+              <a href="" class="d-block link-secondary">Lighting</a>
+              <a href="" class="d-block link-secondary">Collectables</a>
+              <a href="" class="d-block link-secondary">Clothing</a>
+              <a href="" class="d-block link-secondary">Jewelry & Watches</a>
+              <a href="" class="d-block link-secondary">Toys & Games</a>
+              <a href="" class="d-block link-secondary">Books</a>
+              <a href="" class="d-block link-secondary">Art</a>
+              <a href="" class="d-block link-secondary">Electronics</a>
+              <a href="" class="d-block link-secondary">Misc.</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <dialog class="dialog">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="col-11">
+            <p class="dialogText pt-3"></p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="closeDialogBtn btn" aria-label="Close">
+              &times;
+            </button>
+          </div>
+        </div>
+      </dialog>
+    </footer>
   </body>
 </html>
