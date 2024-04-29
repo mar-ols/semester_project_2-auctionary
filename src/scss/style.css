@@ -51,3 +51,20 @@ body {
   text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000,
     1px -1px 0 #000;
 }
+
+.listingImg {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.listingCard {
+  width: 300px;
+}
+
+.frontPage {
+  padding-bottom: 70px;
+}
+
+.ongoing {
+  padding-bottom: 50px;
+}

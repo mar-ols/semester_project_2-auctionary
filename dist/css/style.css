@@ -6,6 +6,31 @@ body {
   font-family: "Comfortaa";
 }
 
+.userIcon {
+  cursor: pointer;
+}
+
+.loader {
+  border-top: 6px double;
+  border-bottom: 6px solid;
+  border-left: 6px solid;
+  border-right: 6px double;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 30px auto;
+  animation: loader 2s infinite linear;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Front page */
 .hero {
   background-image: linear-gradient(rgba(87, 87, 87, 0.55), rgba(189, 189, 189, 0.55)), url("../../images/serg-balak-YFRSatKEn4c-unsplash-min.jpg");
   background-repeat: no-repeat;
@@ -19,8 +44,21 @@ body {
   text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000;
 }
 
-.userIcon {
-  cursor: pointer;
+.listingImg {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.listingCard {
+  width: 300px;
+}
+
+.frontPage {
+  padding-bottom: 70px;
+}
+
+.ongoing {
+  padding-bottom: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */
