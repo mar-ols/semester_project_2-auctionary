@@ -52,6 +52,16 @@ body {
     1px -1px 0 #000;
 }
 
+.frontPage {
+  padding-bottom: 70px;
+}
+
+.ongoing {
+  padding-bottom: 50px;
+}
+
+/* Listing card */
+
 .listingImg {
   max-height: 200px;
   object-fit: cover;
@@ -61,10 +71,15 @@ body {
   width: 300px;
 }
 
-.frontPage {
-  padding-bottom: 70px;
+/* Listings */
+
+#search {
+  background-image: url("../../images/components/search.png");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: right;
 }
 
-.ongoing {
-  padding-bottom: 50px;
+.extraMargin {
+  margin-bottom: 100px;
 }
