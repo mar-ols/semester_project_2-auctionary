@@ -14,7 +14,6 @@ export async function search(value) {
   const searchResults = await getListings(searchListingsURL);
 
   const listingContainer = document.querySelector(".listings");
-  const feedback = document.querySelector(".feedback");
   listingContainer.innerText = "";
 
   searchResults.data.forEach((listing) => {
