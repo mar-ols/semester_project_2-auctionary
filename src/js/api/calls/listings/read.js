@@ -7,7 +7,6 @@ import {
 import { loader } from "../../../functions/loader.js";
 
 export async function getListings(url) {
-  loader();
   try {
     const response = await fetch(url, {
       headers: {
@@ -17,10 +16,6 @@ export async function getListings(url) {
     const listings = await response.json();
 
     if (response.ok) {
-      const getLoader = document.querySelector(".loader");
-      if (getLoader) {
-        getLoader.classList.remove("loader");
-      }
       return listings;
     }
   } catch (error) {
@@ -29,7 +24,6 @@ export async function getListings(url) {
 }
 
 export async function getListing(id) {
-  loader();
   const getListingAPI = `${API_BASE}${API_LISTINGS}/${id}?${API_SELLER}&${API_QUERY_BIDS}`;
   try {
     if (id) {
@@ -41,10 +35,6 @@ export async function getListing(id) {
 
       const listing = await response.json();
       if (response.ok) {
-        const getLoader = document.querySelector(".loader");
-        if (getLoader) {
-          getLoader.classList.remove("loader");
-        }
         return listing;
       }
     }

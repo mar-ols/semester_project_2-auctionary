@@ -2,11 +2,13 @@ import { getListings } from "../../api/calls/listings/read.js";
 import { listingsIndex } from "../../api/constants.js";
 import { listingCard } from "../display-templates/listingCard.js";
 import { errorMsg } from "../error.js";
+import { loader } from "../loader.js";
 
 const viewMore = document.querySelector(".viewMore");
 let listingCount = 10;
 
 export async function displayListings() {
+  loader();
   try {
     const fetchListings = await getListings(listingsIndex);
 
@@ -15,6 +17,10 @@ export async function displayListings() {
 
     fetchListings.data.slice(0, listingCount).forEach((listing) => {
       if (listing.media[0]) {
+        const getLoader = document.querySelector(".loader");
+        if (getLoader) {
+          getLoader.classList.remove("loader");
+        }
         listingContainer.append(listingCard(listing));
       }
     });
