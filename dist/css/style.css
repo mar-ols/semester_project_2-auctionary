@@ -44,6 +44,15 @@ body {
   text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000;
 }
 
+.frontPage {
+  padding-bottom: 70px;
+}
+
+.ongoing {
+  padding-bottom: 50px;
+}
+
+/* Listing card */
 .listingImg {
   max-height: 200px;
   object-fit: cover;
@@ -53,12 +62,60 @@ body {
   width: 300px;
 }
 
-.frontPage {
-  padding-bottom: 70px;
+/* Listings */
+#search {
+  background-image: url("../../images/components/search.png");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: right;
 }
 
-.ongoing {
-  padding-bottom: 50px;
+.extraMargin {
+  margin-bottom: 100px;
+}
+
+/* Single listing */
+.listingImage {
+  max-width: 80%;
+}
+
+.image-modal-content {
+  cursor: pointer;
+  transition: 300ms ease-out;
+}
+
+.image-modal-content:hover {
+  transform: scale(1.03);
+  transition: 300ms ease-in;
+}
+
+.image-modal-popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  animation: 500ms fadeIn;
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.image-modal-popup .wrapper {
+  margin-top: 30px;
+  position: relative;
+}
+
+.image-modal-popup img {
+  max-width: 80%;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

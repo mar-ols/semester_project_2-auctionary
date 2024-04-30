@@ -6,6 +6,7 @@ import {
   id,
   API_BIDS,
 } from "../../constants.js";
+import { showMsg } from "../../../functions/showUserMsg.js";
 
 export async function sendBid(bidObject) {
   const token = loadStorage("token");
@@ -28,7 +29,15 @@ export async function sendBid(bidObject) {
     const result = await response.json();
 
     if (response.ok) {
+      const successBid = document.querySelector(".successBid");
+      successBid.classList.remove("d-none");
+      setTimeout(function () {
+        location.reload();
+      }, 1000);
       return result;
+    }
+    if (result.statusCode === 400) {
+      showMsg("Bid must be higher than current bid");
     }
   } catch (error) {
     console.error(error);
