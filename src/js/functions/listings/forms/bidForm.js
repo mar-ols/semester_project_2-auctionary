@@ -17,9 +17,6 @@ export function bidForm() {
 
       sendBid(bidObject);
       form.bid.value = "";
-      setTimeout(function () {
-        location.reload();
-      }, 1000);
     });
   }
 }

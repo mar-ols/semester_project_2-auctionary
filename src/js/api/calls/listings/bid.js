@@ -31,6 +31,9 @@ export async function sendBid(bidObject) {
     if (response.ok) {
       const successBid = document.querySelector(".successBid");
       successBid.classList.remove("d-none");
+      setTimeout(function () {
+        location.reload();
+      }, 1000);
       return result;
     }
     if (result.statusCode === 400) {
