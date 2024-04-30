@@ -15,19 +15,68 @@ export async function displayListing() {
     if (getLoader) {
       getLoader.classList.remove("loader");
     }
+
+    // Listing H1
     const listingH1 = document.querySelector(".listingH1");
     listingH1.innerText = listing.data.title;
 
+    // Media gallery
+
+    // Main image
     const listingImg = document.querySelector(".listingImage");
     listingImg.src = listing.data.media[0].url;
     listingImg.setAttribute("alt", `${listing.data.media[0].alt}`);
 
+    // Setting extra images
+    const extraImages = document.querySelector(".extraImages");
+
+    if (listing.data.media.length > 1) {
+      for (let i = 1; i < listing.data.media.length; i++) {
+        const imageURL = listing.data.media[i].url;
+        const imageALT = listing.data.media[i].alt;
+
+        const imageContainer = document.createElement("img");
+        imageContainer.classList.add(
+          "listingImg",
+          "col-3",
+          "image-modal-content",
+          "border",
+          "border-secondary"
+        );
+        imageContainer.setAttribute("alt", imageALT);
+        imageContainer.src = imageURL;
+
+        extraImages.append(imageContainer);
+      }
+    }
+
+    // Modal for extra images
+    const modalPopup = document.querySelector(".image-modal-popup");
+    const listingThumbnails = document.querySelectorAll(".extraImages img");
+    const imageElement = document.querySelector(".image-modal-popup img");
+
+    listingThumbnails.forEach((image) => {
+      image.addEventListener("click", (event) => {
+        event.stopPropagation();
+        modalPopup.style.display = "block";
+        imageElement.src = image.src;
+        imageElement.setAttribute("alt", image.alt);
+      });
+    });
+
+    document.addEventListener("click", () => {
+      modalPopup.style.display = "none";
+    });
+
+    // Seller
     const listingSeller = document.querySelector(".listingSeller");
     listingSeller.innerText = `Seller: ${listing.data.seller.name}`;
 
+    // Countdown
     const counter = document.querySelector(".countDown");
     countDown(`${listing.data.endsAt}`, counter);
 
+    // Current bid
     const currentBid = listing.data.bids[listing.data.bids.length - 1];
     let amount = 0;
     if (currentBid !== undefined) {
@@ -37,6 +86,7 @@ export async function displayListing() {
     const currentBidContainer = document.querySelector(".currentBid");
     currentBidContainer.innerText = `Current bid: ${amount}`;
 
+    // View all bids
     const viewAllBids = document.querySelector(".viewAllBids");
     const allBidsContainer = document.querySelector(".allBidsContainer");
 
@@ -73,9 +123,11 @@ export async function displayListing() {
       visuallyHidden.classList.toggle("visually-hidden");
     });
 
+    // Listing description
     const listingDescription = document.querySelector(".listingDescription");
     listingDescription.innerText = listing.data.description;
 
+    // Update or delete if logged in
     const updateDeleteContainer = document.createElement("div");
     updateDeleteContainer.classList.add("d-flex", "justify-content-between");
 
@@ -109,8 +161,6 @@ export async function displayListing() {
 
     deleteListingBtn.addEventListener("click", () => {
       showMsg("Are you sure you want to delete?", id);
-      // removeListing(id);
-      // window.history.back();
     });
   }
 }

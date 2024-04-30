@@ -18,7 +18,7 @@
       src="../../../src/js/functions/listings/index.js"
     ></script>
     <link rel="stylesheet" href="../../../dist/css/index.css" />
-    <link rel="stylesheet" href="../../../src/scss/style.css" />
+    <link rel="stylesheet" href="../../../dist/css/style.css" />
     <title>Auctionary</title>
   </head>
   <body class="bg-primary text-secondary">
@@ -232,8 +232,16 @@
       <section class="singleListing extraMargin">
         <h1 class="listingH1 text-center text-decoration-underline"></h1>
         <div class="profileContainer container">
-          <div class="text-center">
-            <img src="" alt="" class="listingImage" />
+          <div class="mediaGallery text-center">
+            <div class="mainImage">
+              <img src="" alt="" class="listingImage border border-secondary" />
+            </div>
+            <div class="extraImages"></div>
+            <div class="image-modal-popup">
+              <div class="wrapper">
+                <img src="" alt="" />
+              </div>
+            </div>
           </div>
           <p class="listingSeller mt-4"></p>
           <p class="countDown fw-bold"></p>
