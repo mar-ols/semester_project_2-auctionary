@@ -2,7 +2,6 @@ import { sendBid } from "../../../api/calls/listings/bid.js";
 
 export function bidForm() {
   const bidForm = document.querySelector("#enterBid");
-  const successBid = document.querySelector(".successBid");
 
   if (bidForm) {
     bidForm.addEventListener("submit", (event) => {
@@ -18,7 +17,9 @@ export function bidForm() {
 
       sendBid(bidObject);
       form.bid.value = "";
-      successBid.classList.remove("d-none");
+      setTimeout(function () {
+        location.reload();
+      }, 1000);
     });
   }
 }
