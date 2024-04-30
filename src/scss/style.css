@@ -83,3 +83,9 @@ body {
 .extraMargin {
   margin-bottom: 100px;
 }
+
+/* Single listing */
+
+.listingImage {
+  max-width: 80%;
+}
