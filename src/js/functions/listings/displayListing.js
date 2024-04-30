@@ -3,6 +3,7 @@ import { id } from "../../api/constants.js";
 import { countDown } from "../counter.js";
 import { loadStorage } from "../storage/localStorage.js";
 import { removeListing } from "../../api/calls/listings/delete.js";
+import { showMsg } from "../showUserMsg.js";
 
 export async function displayListing() {
   const listing = await getListing(id);
@@ -107,7 +108,8 @@ export async function displayListing() {
     }
 
     deleteListingBtn.addEventListener("click", () => {
-      removeListing(id);
+      showMsg("Are you sure you want to delete?", id);
+      // removeListing(id);
       // window.history.back();
     });
   }
