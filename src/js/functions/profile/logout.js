@@ -4,6 +4,8 @@ import {
   listingPage,
   profilePage,
   singleListing,
+  updateListing,
+  newListing,
 } from "../../api/constants.js";
 
 export function logout() {
@@ -18,7 +20,7 @@ export function logout() {
       window.location.href = "../../";
     }
 
-    if (singleListing) {
+    if (singleListing || updateListing || newListing) {
       window.location.href = "../../../../";
     }
   });
