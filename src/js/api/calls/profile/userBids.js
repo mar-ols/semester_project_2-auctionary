@@ -19,9 +19,9 @@ export async function getUserBids() {
         "X-Noroff-API-Key": API_KEY,
       },
     });
-    const user = await response.json();
+    const result = await response.json();
     if (response.ok) {
-      return user;
+      return result;
     }
   } catch (error) {
     console.error(error);
