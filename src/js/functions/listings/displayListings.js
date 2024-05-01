@@ -15,8 +15,8 @@ export async function displayListings() {
     const profile = loadStorage("profile");
     const createNewListing = document.querySelector(".newListingH2");
 
-    if (!profile) {
-      createNewListing.remove();
+    if (profile) {
+      createNewListing.classList.remove("d-none");
     }
 
     const listingContainer = document.querySelector(".listings");
