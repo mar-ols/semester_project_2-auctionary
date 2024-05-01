@@ -4,6 +4,7 @@ import { displayUsername } from "./displayUsername.js";
 import { displayProfile } from "./displayProfile.js";
 import { displayChangeAvatar } from "./displayEditAvatar.js";
 import { getAvatarData } from "./forms/changeAvatarForm.js";
+import { displayUserBids } from "./displayUserBids.js";
 import { logout } from "./logout.js";
 
 getLoginData();
@@ -12,4 +13,5 @@ displayUsername();
 displayProfile();
 displayChangeAvatar();
 getAvatarData();
+displayUserBids();
 logout();
