@@ -16,7 +16,6 @@ export async function displayUserBids() {
       if (!uniqueListing.has(listingContent)) {
         uniqueListing.add(listingContent);
 
-        console.log(listing);
         userBids.append(listingCard(listing));
         const listingCardClass = document.querySelector(".listingCard");
         listingCardClass.classList.add(
