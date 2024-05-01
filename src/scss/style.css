@@ -102,6 +102,7 @@ body {
 
 .image-modal-popup {
   position: fixed;
+  overflow: auto;
   top: 0;
   bottom: 0;
   right: 0;
