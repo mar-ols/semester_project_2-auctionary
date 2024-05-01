@@ -38,7 +38,6 @@ export function showMsg(text, id) {
     console.log(id);
     yesBtn.addEventListener("click", () => {
       removeListing(id);
-      window.history.back();
     });
 
     noBtn.addEventListener("click", () => {

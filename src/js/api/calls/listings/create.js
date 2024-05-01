@@ -1,5 +1,6 @@
 import { loadStorage } from "../../../functions/storage/localStorage.js";
 import { API_BASE, API_LISTINGS, API_KEY } from "../../constants.js";
+import { showMsg } from "../../../functions/showUserMsg.js";
 
 export async function createListing(newListing) {
   const createListingAPI = API_BASE + API_LISTINGS;
@@ -16,8 +17,20 @@ export async function createListing(newListing) {
     };
     const response = await fetch(createListingAPI, postData);
     const result = await response.json();
+    console.log(response);
+    console.log(result);
     if (response.ok) {
-      return result;
+      window.location.href = `../single-listing/index.html?id=${result.data.id}&title=${result.data.title}`;
+    }
+
+    if (response.status === 500) {
+      showMsg("There is a problem on our end. Please try again later.");
+    }
+
+    if (response.status === 400) {
+      showMsg(
+        "An error has occurred. Please check all inputs, and make sure image urls are working and publicly accessible."
+      );
     }
   } catch (error) {
     console.error(error);

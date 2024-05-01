@@ -16,9 +16,9 @@ export async function removeListing(id) {
         "X-Noroff-API-Key": API_KEY,
       },
     });
-    const result = await response.json();
-    if (response.ok) {
-      return result;
+
+    if (response.status === 204) {
+      window.location.href = "../";
     }
   } catch (error) {
     console.error(error);

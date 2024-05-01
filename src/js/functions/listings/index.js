@@ -5,6 +5,8 @@ import { displayListings } from "./displayListings.js";
 import { displayListing } from "./displayListing.js";
 import { searchInput } from "./forms/searchForm.js";
 import { bidForm } from "./forms/bidForm.js";
+import { getNewListingData } from "./forms/createListingForm.js";
+import { additionalImg } from "./additionalImg.js";
 import { logout } from "../profile/logout.js";
 
 getLoginData();
@@ -21,3 +23,8 @@ searchInput();
 
 displayListing();
 bidForm();
+
+// new-listing/index.html
+
+getNewListingData();
+additionalImg();
