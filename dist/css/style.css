@@ -119,4 +119,26 @@ body {
   cursor: pointer;
 }
 
+/* Profile */
+.avatarContainer {
+  position: relative;
+}
+
+.avatarContainer span {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.avatarContainer:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #3d3d3d;
+}
+
 /*# sourceMappingURL=style.css.map */
