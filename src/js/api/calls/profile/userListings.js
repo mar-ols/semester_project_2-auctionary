@@ -2,17 +2,17 @@ import {
   API_BASE,
   API_PROFILES,
   API_KEY,
-  API_BIDS,
-  API_BID_LISTING,
+  API_SELLER,
+  API_QUERY_BIDS,
 } from "../../constants.js";
 import { loadStorage } from "../../../functions/storage/localStorage.js";
 
-export async function getUserBids() {
+export async function getUserListings() {
   const token = loadStorage("token");
   const profile = loadStorage("profile");
-  const userBidsAPI = `${API_BASE}${API_PROFILES}${profile.userName}${API_BIDS}?${API_BID_LISTING}`;
+  const userListingsAPI = `${API_BASE}${API_PROFILES}${profile.userName}/listings?${API_QUERY_BIDS}&${API_SELLER}`;
   try {
-    const response = await fetch(userBidsAPI, {
+    const response = await fetch(userListingsAPI, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -20,6 +20,7 @@ export async function getUserBids() {
       },
     });
     const result = await response.json();
+
     if (response.ok) {
       return result;
     }

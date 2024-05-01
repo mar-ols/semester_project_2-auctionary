@@ -5,6 +5,7 @@ import { displayProfile } from "./displayProfile.js";
 import { displayChangeAvatar } from "./displayEditAvatar.js";
 import { getAvatarData } from "./forms/changeAvatarForm.js";
 import { displayUserBids } from "./displayUserBids.js";
+import { displayUserListings } from "./displayUserListings.js";
 import { logout } from "./logout.js";
 
 getLoginData();
@@ -14,4 +15,5 @@ displayProfile();
 displayChangeAvatar();
 getAvatarData();
 displayUserBids();
+displayUserListings();
 logout();

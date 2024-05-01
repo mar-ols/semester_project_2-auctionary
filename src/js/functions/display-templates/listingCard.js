@@ -3,8 +3,9 @@ import { loadStorage } from "../storage/localStorage.js";
 
 export function listingCard(data) {
   const ongoing = document.querySelector(".ongoing");
+  const userListings = document.querySelector(".userListings");
 
-  // const profile = loadStorage("profile");
+  const profile = loadStorage("profile");
 
   // Listing card
   const cardContainer = document.createElement("div");
@@ -27,6 +28,10 @@ export function listingCard(data) {
       imageLink.href = `./html/listings/single-listing/index.html?id=${data.id}&title=${data.title}`;
     } else {
       imageLink.href = `single-listing/index.html?id=${data.id}&title=${data.title}`;
+    }
+
+    if (profile && userListings) {
+      imageLink.href = `../listings/single-listing/index.html?id=${data.id}&title=${data.title}`;
     }
 
     // Listing image
@@ -58,7 +63,11 @@ export function listingCard(data) {
     } else {
       titleLink.href = `single-listing/index.html?id=${data.id}&title=${data.title}`;
     }
+    if (profile && userListings) {
+      titleLink.href = `../listings/single-listing/index.html?id=${data.id}&title=${data.title}`;
+    }
   }
+
   titleLink.classList.add("text-secondary");
 
   // Listing title text
@@ -121,6 +130,9 @@ export function listingCard(data) {
     } else {
       bidLink.href = `single-listing/index.html?id=${data.id}&title=${data.title}`;
     }
+    if (profile && userListings) {
+      bidLink.href = `../listings/single-listing/index.html?id=${data.id}&title=${data.title}`;
+    }
   }
 
   // Bid button
@@ -128,6 +140,12 @@ export function listingCard(data) {
   bidBtn.classList.add("btn", "btn-info", "col-12");
   bidBtn.innerText = "Bid";
   bidLink.appendChild(bidBtn);
+
+  if (data.seller && profile) {
+    if (profile.userName === data.seller.name) {
+      bidBtn.disabled = true;
+    }
+  }
 
   cardContainer.append(counterContainer, bidLink);
 
