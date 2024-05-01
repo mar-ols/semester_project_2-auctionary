@@ -162,6 +162,10 @@ export async function displayListing() {
     deleteListingBtn.addEventListener("click", () => {
       showMsg("Are you sure you want to delete?", id);
     });
+
+    updateListingBtn.addEventListener("click", () => {
+      window.location.href = `../update-listing/index.html?id=${listing.data.id}&title=${listing.data.title}`;
+    });
   }
 }
 

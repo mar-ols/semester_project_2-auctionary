@@ -40,12 +40,6 @@ export function getNewListingData() {
         };
 
         createListing(newListing);
-
-        form.title.value = "";
-        form.description.value = "";
-        form.endDate.value = "";
-        form.listingImgURL.value = "";
-        form.listingImgAlt.value = "";
       });
     }
   } catch (error) {

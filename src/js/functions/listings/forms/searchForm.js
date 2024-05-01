@@ -9,7 +9,9 @@ export function searchInput() {
   if (getSearchForm) {
     getSearchForm.addEventListener("submit", (event) => {
       event.preventDefault();
+
       const searchValue = getSearchInput.value.trim().toLowerCase();
+      console.log(searchValue);
       if (searchValue.length === 0) {
         location.reload();
       }

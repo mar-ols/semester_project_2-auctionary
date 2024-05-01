@@ -29,3 +29,5 @@ export const locationURL = window.location.href;
 export const listingPage = locationURL.includes("listings");
 export const profilePage = locationURL.includes("profile");
 export const singleListing = locationURL.includes("single");
+export const updateListing = locationURL.includes("update");
+export const newListing = locationURL.includes("new");
