@@ -32,7 +32,7 @@ export async function displayListings() {
       }
     });
 
-    if (listingCount === 30) {
+    if (listingCount === 60) {
       viewMore.style.display = "none";
     }
   } catch {
