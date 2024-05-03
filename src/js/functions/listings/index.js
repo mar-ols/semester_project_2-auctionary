@@ -7,6 +7,7 @@ import { searchInput } from "./forms/searchForm.js";
 import { bidForm } from "./forms/bidForm.js";
 import { getNewListingData } from "./forms/createListingForm.js";
 import { additionalImg } from "./additionalImg.js";
+import { disablePastDates } from "./disablePastDates.js";
 import { logout } from "../profile/logout.js";
 
 getLoginData();
@@ -28,3 +29,4 @@ bidForm();
 
 getNewListingData();
 additionalImg();
+disablePastDates();
