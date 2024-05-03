@@ -28,9 +28,7 @@ export async function createListing(newListing) {
     }
 
     if (response.status === 400) {
-      showMsg(
-        "An error has occurred. Please check all inputs, and make sure image urls are working and publicly accessible."
-      );
+      showMsg(`${result.errors[0].message}`);
     }
   } catch (error) {
     console.error(error);
