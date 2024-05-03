@@ -1,13 +1,13 @@
 import { getListing } from "../../api/calls/listings/read.js";
-import { id } from "../../api/constants.js";
+import { id, title } from "../../api/constants.js";
 import { countDown } from "../counter.js";
 import { loadStorage } from "../storage/localStorage.js";
-import { removeListing } from "../../api/calls/listings/delete.js";
 import { showMsg } from "../showUserMsg.js";
 
 export async function displayListing() {
   const listing = await getListing(id);
 
+  const titleContainer = document.querySelector("#title");
   const loggedIn = loadStorage("profile");
 
   if (listing) {
@@ -15,6 +15,8 @@ export async function displayListing() {
     if (getLoader) {
       getLoader.classList.remove("loader");
     }
+
+    titleContainer.innerText = `Auctionary - ${listing.data.title}`;
 
     // Listing H1
     const listingH1 = document.querySelector(".listingH1");
