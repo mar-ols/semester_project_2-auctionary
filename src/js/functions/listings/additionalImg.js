@@ -47,6 +47,7 @@ export function additionalImg() {
 
         const additionalImgAltInput = document.createElement("input");
         additionalImgAltInput.setAttribute("type", "text");
+        additionalImgAltInput.setAttribute("max-length", "120");
         additionalImgAltInput.setAttribute(
           "id",
           `additionalImgAlt${imageCounter}`
