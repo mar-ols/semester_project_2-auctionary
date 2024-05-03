@@ -88,6 +88,19 @@ export async function displayListing() {
     const currentBidContainer = document.querySelector(".currentBid");
     currentBidContainer.innerText = `Current bid: ${amount}`;
 
+    // If auction is over
+    const getBidForm = document.querySelector("#enterBid");
+
+    const listingEndDate = new Date(listing.data.endsAt);
+    const todaysDate = new Date();
+
+    const convertedEndDate = listingEndDate.getTime();
+    const convertedTodaysDate = todaysDate.getTime();
+
+    if (convertedTodaysDate > convertedEndDate) {
+      getBidForm.remove();
+    }
+
     // View all bids
     const viewAllBids = document.querySelector(".viewAllBids");
     const allBidsContainer = document.querySelector(".allBidsContainer");
