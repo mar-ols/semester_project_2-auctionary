@@ -17,8 +17,7 @@ export async function createListing(newListing) {
     };
     const response = await fetch(createListingAPI, postData);
     const result = await response.json();
-    console.log(response);
-    console.log(result);
+
     if (response.ok) {
       window.location.href = `../single-listing/index.html?id=${result.data.id}&title=${result.data.title}`;
     }

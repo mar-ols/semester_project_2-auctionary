@@ -14,7 +14,6 @@ export function logout() {
     removeStorage("token");
     removeStorage("profile");
     location.reload();
-    console.log(locationURL);
 
     if (profilePage || listingPage) {
       window.location.href = "../../";

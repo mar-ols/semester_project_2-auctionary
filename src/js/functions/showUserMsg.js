@@ -35,7 +35,7 @@ export function showMsg(text, id) {
     if (!getYesBtn) {
       btnContainer.append(yesBtn, noBtn);
     }
-    console.log(id);
+
     yesBtn.addEventListener("click", () => {
       removeListing(id);
     });

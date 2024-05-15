@@ -5,7 +5,7 @@ import { updateListing } from "../../../api/calls/listings/update.js";
 export async function getUpdatedListingData() {
   try {
     const getUpdateListing = await getListing(id);
-    console.log(getUpdateListing);
+
     const getUpdateForm = document.querySelector("#updateListing");
     const additionalImagesContainer =
       document.querySelector("#additionalImages");
@@ -142,8 +142,6 @@ export async function getUpdatedListingData() {
           media: media,
           endsAt: date,
         };
-
-        console.log(updatedListing);
 
         updateListing(updatedListing);
       });

@@ -23,7 +23,7 @@ export async function getProfile() {
         if (getLoader) {
           getLoader.classList.remove("loader");
         }
-        console.log(user);
+
         return user;
       }
     } catch (error) {
