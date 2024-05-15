@@ -112,7 +112,7 @@ export async function displayListing() {
       bidBtn.disabled = true;
     }
 
-    if (loggedIn) {
+    if (loggedIn && bidBtn) {
       if (loggedIn.userName === listing.data.seller.name) {
         bidBtn.disabled = true;
       }
