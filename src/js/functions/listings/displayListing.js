@@ -88,6 +88,13 @@ export async function displayListing() {
     const currentBidContainer = document.querySelector(".currentBid");
     currentBidContainer.innerText = `Current bid: ${amount}`;
 
+    const getBidInput = document.querySelector("#bid");
+    if (getBidInput) {
+      const minValue = amount + 1;
+      getBidInput.min = minValue.toString();
+      getBidInput.value = minValue.toString();
+    }
+
     // If auction is over
     const getBidForm = document.querySelector("#enterBid");
 
